@@ -96,7 +96,11 @@
                         </button>
                     </nav>
 
-                    <div className={`fixed inset-0 z-[105] bg-white transition-all duration-700 ease-in-out ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+                 <div
+  className={`fixed top-0 left-0 w-screen h-screen z-[9999] bg-white transform transition-transform duration-700 ease-in-out ${
+    isMenuOpen ? "translate-y-0" : "-translate-y-full"
+  }`}
+>
                         <div className="h-full flex flex-col items-center justify-center space-y-8">
                             {menuItems.map((item, i) => (
                                 <button key={item.id} onClick={() => handleNav(item.id)} className="group overflow-hidden">
