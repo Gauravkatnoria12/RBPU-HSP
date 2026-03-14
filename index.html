@@ -46,7 +46,7 @@
 
         // --- Loading Screen ---
         const Loader = () => (
-           <div className="fixed top-0 left-0 w-screen h-screen z-[500] bg-white flex flex-col items-center justify-center">
+            <div className="fixed inset-0 z-[500] bg-white flex flex-col items-center justify-center">
                 <div className="mb-8 overflow-hidden">
                     <h2 className="text-sm font-bold tracking-[0.5em] uppercase animate-pulse">Rayat Bahra</h2>
                 </div>
@@ -84,7 +84,7 @@
 
             return (
                 <>
-                   <nav className={`fixed w-full z-[100] transition-all duration-500 px-6 md:px-12 py-6 flex justify-between items-center ${scrolled ? 'bg-white/80 backdrop-blur-md border-b border-zinc-100' : 'bg-transparent'}`}>
+                    <nav className={`fixed w-full z-[100] transition-all duration-500 px-6 md:px-12 py-6 flex justify-between items-center ${scrolled ? 'bg-white/80 backdrop-blur-md border-b border-zinc-100' : 'bg-transparent'}`}>
                         <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNav('home')}>
                             <div className="w-8 h-8 bg-black flex items-center justify-center text-white font-bold text-[10px]"><img src="RBPU.png" className="w-full h-full object-cover" alt="RBPU Logo" /></div>
                             <span className="font-extrabold tracking-[0.2em] text-sm uppercase">Rayat Bahra</span>
@@ -96,15 +96,11 @@
                         </button>
                     </nav>
 
-                 <div
-  className={`fixed top-0 left-0 w-screen h-screen z-[9999] bg-white transform transition-transform duration-700 ease-in-out ${
-    isMenuOpen ? "translate-y-0" : "-translate-y-full"
-  }`}
->
+                    <div className={`fixed inset-0 z-[105] bg-white transition-all duration-700 ease-in-out ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
                         <div className="h-full flex flex-col items-center justify-center space-y-8">
                             {menuItems.map((item, i) => (
-                                <button key={item.id} onClick={() => handleNav(item.id)} className="group overflow-hidden">
-                                    <h2 className={`text-5xl md:text-7xl font-light tracking-tighter transition-all duration-500 hover:italic ${activePage === item.id ? 'italic text-black' : 'text-zinc-300 hover:text-black'}`}>
+                                <button key={item.id} onClick={() => handleNav(item.id)} className="group"> 
+                                    <h2 className={`text-5xl md:text-7xl font-light tracking-tighter transition-all duration-500 hover:italic px-4 ${activePage === item.id ? 'italic text-black' : 'text-zinc-300 hover:text-black'}`}>
                                         {item.label}
                                     </h2>
                                 </button>
@@ -285,7 +281,7 @@
                             { t: 'Engineering & Technology', d: 'Computer Science, Mechanical, Civil, ECE.', i: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600' },
                             { t: 'Pharmacy & Nursing', d: 'B.Pharmacy, D.Pharmacy, GNM, B.Sc Nursing.', i: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600' },
                             { t: 'Management & Law', d: 'MBA, BBA, B.Com, LLB, BALLB.', i: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600' },
-                            { t: 'Medical Sciences', d: 'Advanced clinical training and healthcare studies.', i: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600' },
+                            { t: 'Medical Sciences', d: 'Advanced clinical training and healthcare studies.', i: 'medical.jpg?auto=format&fit=crop&q=80&w=600' },
                             { t: 'Basic Sciences', d: 'Physics, Chemistry, Maths, and Biotechnology.', i: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=600' },
                             { t: 'Skill Development', d: 'Short-term vocational and industry-ready courses.', i: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600' }
                         ].map((c, i) => (
@@ -451,5 +447,4 @@
     </script>
 </body>
 </html>
-
 
