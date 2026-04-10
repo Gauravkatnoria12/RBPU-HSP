@@ -35,7 +35,6 @@ Built as a concept/portfolio project to showcase what a modern educational insti
 | Markup | HTML5 |
 | Styling | Tailwind CSS (CDN) |
 | UI Framework | React 18 (via CDN, no build step!) |
-| JSX Compilation | Babel Standalone |
 | Fonts | Plus Jakarta Sans + Playfair Display |
 
 > 💡 **Cool trick used here:** React + JSX is loaded entirely via CDN using Babel Standalone — so you get the full component-based architecture with zero npm setup. It's a neat approach for prototypes and portfolio pieces.
@@ -48,7 +47,7 @@ Built as a concept/portfolio project to showcase what a modern educational insti
 rbpu-hsp/
 │
 ├── index.html       # The entire app — one file to rule them all
-├── RBPU.png         # University logo / favicon
+├── assets           # images
 └── README.md        # You're here!
 ```
 
